@@ -12,13 +12,14 @@
 
     <h2>
         Nuevo Producto
-        <a class="btn btn-primary float-right text-white">Regresar</a>
+        <a class="btn btn-primary float-right text-white" href={{ url()->previous() }}>Regresar</a>
     </h2>
 
-    <form action="" method="POST">
+    <form action={{ route('products.store') }} method="POST">
+        {{ @csrf_field() }}
         <div class="form-group">
             <label for="name">Nombre del nuevo producto</label>
-            <input type="text" class="form-control" id="name" name="name">  <!-- IMPORTANTE : name tanto para validaciones como para leer los datos -->
+            <input type="text" class="form-control" id="name" name="name" >  <!-- IMPORTANTE : name tanto para validaciones como para leer los datos -->
         </div>
 
         <div class="form-group">
@@ -27,7 +28,7 @@
         </div>
 
         <div class="form-group">
-            <label for="body">Breve descripción del producto</label>
+            <label for="body">Descripción completa del producto</label>
             <textarea type="text" class="form-control" rows="6" id="body" name="body"></textarea>
         </div>
 

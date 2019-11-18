@@ -11,16 +11,16 @@
 <div class="col-sm-8">
 
     <h2>
-        Lista de Productos
-        <a class="btn btn-outline-secondary float-right">Editar</a>
+        {{{ $product->name}}}
+        <a class="btn btn-outline-secondary float-right" href={{ route('products.edit', $product->id) }}>Editar</a>
     </h2>
     <p>
-        kkdsdsddssd
+        {{$product->short}}
     </p>
     <p>
-        kdokdodpsplasld,aslñdsñlmdlñsamdlñamsdaskmdpoksaomdsaklñdmñlsakmd
+        {!! $product->body !!}
     </p>
-    <a class="btn btn-primary text-white">Regresar</a>
+    <a class="btn btn-primary text-white" href={{ url()->previous() }}>Regresar</a>
 </div>
 
 
